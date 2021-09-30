@@ -1,0 +1,5 @@
+[query]
+  dummy_trs: == 0
+  size_x: > 32
+  bids_meta.Manufacturer: != "Siemens"
+  bids_meta.MultibandAccelerationFactor: > 3
