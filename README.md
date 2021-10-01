@@ -58,7 +58,7 @@ The [QMTools project](https://github.com/hickst/qmtools) was inspired by a 2019 
 
 The [Swagger UI for the MRIQC web API](https://mriqc.nimh.nih.gov). Scroll down to the `Models` section, which documents the database schema (structure and field names) that can be queried with **QMFetcher**.
 
-The source code for the [MRIQC web API](https://mriqc.nimh.nih.gov/), which provides the API that **QMFetcher** uses to query the MRIQC database.
+The source code for the [MRIQC web API](https://github.com/nipreps/mriqcwebapi), which provides the API that **QMFetcher** uses to query the MRIQC database.
 
 Some old [Discussions and Jupyter notebooks](https://www.kaggle.com/chrisfilo/mriqc/code) which utilize the same MRIQC web API that this project uses.
 
