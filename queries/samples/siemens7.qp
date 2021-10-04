@@ -1,0 +1,2 @@
+bids_meta.Manufacturer == "Siemens"
+bids_meta.MagneticFieldStrength >= 6.5
