@@ -1,4 +1,4 @@
-﻿## QMTools TrafficLight Tool
+﻿# QMTools TrafficLight Tool
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
@@ -16,11 +16,11 @@ Follow the instructions on this project's [main page](https://github.com/hickst/
 
 You must have Docker installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
 
-### **Step 1**: Ensure the required input file is available in the **inputs** directory.
+### **Step 1**: Ensure the required input file is available in the `inputs` directory.
 
-The **qmtraffic** script reads a single MRIQC *group file*; a tab-separated (.tsv) file produced by running the MRIQC program at the group level. The group file must be present in the **inputs** directory, so that it is available to the QMTools Docker container. Copy an MRIQC group file into the **inputs** directory before running the **qmtraffic** script.
+The **qmtraffic** script reads a single *MRIQC group file*; a tab-separated (.tsv) file produced by running the MRIQC program at the group level. The group file must be present in the `inputs` directory, so that it is available to the QMTools Docker container. Copy an MRIQC group file into the `inputs` directory before running the **qmtraffic** script.
 
-**Example**: Copy the MRIQC-generated group file from the 'proj1' project to the QMTools **inputs** directory:
+****Example****: Copy the MRIQC-generated group file from the 'proj1' project to the QMTools `inputs` directory:
 ```
   > cp ~/work/proj1/derivatives/mriqc/group_bold.tsv ~/work/qmtools/inputs
 ```
@@ -68,14 +68,14 @@ optional arguments:
 
 When run in Verbose mode (using the `-v` or `--verbose` flag), QMTools which produce reports will show the path to the HTML report file, which can then be opened in a browser window. Tools which fetch or create data files will display the path to the directory containing those files.
 
-The TrafficLight program produces its report in the **reports** subdirectory. The report may then be displayed in a browser by opening the HTML file named with the modality that was specified when creating the reports (i.e, 'bold.html', 't1w.html', or 't2w.html').
+The TrafficLight program produces its report in the `reports` subdirectory. The report may then be displayed in a browser by opening the HTML file named with the modality that was specified when creating the reports (i.e, 'bold.html', 't1w.html', or 't2w.html').
 
 **Example**: View the TrafficLight report generated in Step 2 above:
 ```
   > open reports/bold.html
 ```
 
-***Note!**: Each time you run a TrafficLight report with the same modality, it **overwrites any previous report with the same modality**. Be sure to copy (or move) the HTML and supporting files (.html, .png, and .tsv) for any reports you wish to save before re-running the TrafficLight report with the same modality.*
+***Note!: Each time you run a TrafficLight report with the same modality, it overwrites any previous report with the same modality.** Be sure to copy (or move) the HTML and supporting files (.html, .png, and .tsv) for any reports you wish to save before re-running the TrafficLight report with the same modality.*
 
 ## License
 
