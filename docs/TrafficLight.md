@@ -1,4 +1,4 @@
-﻿# QMTools TrafficLight Tool
+﻿# QMTools TrafficLight
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
@@ -27,7 +27,7 @@ The **qmtraffic** script reads a single *MRIQC group file*; a tab-separated (.ts
 
 ### **Step 2**: Run the **qmtraffic** Script
 
-Each tool includes an associated script which runs the tool within the QMTools Docker container, and makes the appropriate subdirectories available to the container (via a Docker `bind mount`):
+Each tool includes an associated script which runs the tool within the QMTools Docker container, and makes the appropriate subdirectories available to the container (via a Docker *bind mount*):
 
 To produce a TrafficLight report, run the **qmtraffic** script at the command line, specifying the modality and the relative path to the MRIQC group file.
 
