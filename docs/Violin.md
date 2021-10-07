@@ -73,7 +73,7 @@ If no problems are encountered while running the program, you should see status 
 (qmviolin): To see the report: open 'reports/scanners/violin.html' in a browser.
 ```
 
-### Getting Usage Help for a Tool
+### Getting Usage Help
 
 To see a help (usage) message for a QMTool, call the tool script with the special ***help flag*** (`-h` or `--help`):
 ```
