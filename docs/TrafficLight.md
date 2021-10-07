@@ -16,7 +16,7 @@ Follow the instructions on this project's [main page](https://github.com/hickst/
 
 You must have Docker installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
 
-### **Step 1**: Ensure the required input file is available in the `inputs` directory.
+### **Step 1**: Ensure the required input file is available
 
 The **qmtraffic** script reads a single *MRIQC group file*; a tab-separated (.tsv) file produced by running the MRIQC program at the group level. The group file must be present in the `inputs` directory, so that it is available to the QMTools Docker container. Copy an MRIQC group file into the `inputs` directory before running the **qmtraffic** script.
 
@@ -64,7 +64,7 @@ optional arguments:
   -v, --verbose   Print informational messages during processing [default: False (non-verbose mode)].
 ```
 
-### **Step 3**: View the Output Data and/or Reports
+### **Step 3**: View the Output Report
 
 When run in Verbose mode (using the `-v` or `--verbose` flag), QMTools which produce reports will show the path to the HTML report file, which can then be opened in a browser window. Tools which fetch or create data files will display the path to the directory containing those files.
 
