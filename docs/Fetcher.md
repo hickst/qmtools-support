@@ -73,7 +73,7 @@ In this example, `T1w` is specified as the modality, 27 unique records are desir
 https://mriqc.nimh.nih.gov/api/v1/T1w?max_results=27&page=1
 ```
 
-Using the `--url-only` flag causes **qmfetcher** to construct and display the query URL, which would have been used to fetch a dataset, but **no records are actually fetched**. This can be useful for creating and debugging a query parameters file. The displayed URL can also be used by other HTTP client programs (e.g., `cUrl`, `wget`) to perform the query and retrieve the corresponding records.
+Using the `--url-only` flag causes **qmfetcher** to construct and display the query URL, which would have been used to fetch a dataset, but **no records are actually fetched**. This can be useful for creating and debugging a query parameters file. The displayed URL can also be used by other HTTP client programs (e.g., `curl`, `wget`) to perform the query and retrieve the corresponding records.
 
 **Example 4**: Query for a dataset of recent Bold IQM records from Siemens 7T scanners:
 ```
@@ -93,7 +93,7 @@ This example uses a *query parameters* file containing content-specific query pa
 https://mriqc.nimh.nih.gov/api/v1/bold?max_results=50&page=1&sort=-_created&where=bids_meta.Manufacturer=="Siemens"%20and%20bids_meta.MagneticFieldStrength>=6.5
 ```
 
-Just as in Example 3, using the `--url-only` flag causes **qmfetcher** to construct and display the query URL, which would have been used to fetch a dataset, but **no records are actually fetched**. Note that the output filename argument (`-o`) has been included here but **it is ignored** when the `--url-only` flag is specified.
+Just as in **Example 3**, using the `--url-only` flag causes **qmfetcher** to construct and display the query URL, which would have been used to fetch a dataset, but **no records are actually fetched**. Note that the output filename argument (`-o`) has been included here but **it is ignored** when the `--url-only` flag is specified.
 
 ### Getting Usage Help for a Tool
 
@@ -127,7 +127,7 @@ When run in Verbose mode (using the `-v` or `--verbose` flag), QMTools which pro
 
 All datasets retrieved by the **qmfetcher** program will be placed in the `fetched` directory. Fetched datasets can serve as inputs to the [Violin](https://github.com/hickst/qmtools-support/blob/main/docs/Violin.md) tool or can be manipulated by other programs which understand TSV files.
 
- A fetched dataset is a standard tab-separated file (`.tsv`) containing the quality metrics for one image per row. However, in addition to the image quality metrics fields found in MRIQC-generated group files, the fetched datasets also contain many additional metadata columns. These additional columns include provenance information and BIDS metadata.
+ A fetched dataset is a standard tab-separated file (`.tsv`) containing the quality metrics for one image in each row. However, in addition to the image quality metrics fields found in MRIQC-generated group files, the fetched datasets also contain many additional metadata columns. These additional columns include provenance information and BIDS metadata.
 
 **Note**: For more information about the IQM, provenance, and metadata fields provided by the MRIQC database server, and fetched by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
 
@@ -141,7 +141,7 @@ All datasets retrieved by the **qmfetcher** program will be placed in the `fetch
   > qmviolin T1w fetched/T1w_oldies.tsv inputs/group_T1w.tsv
 ```
 
-**Example 4**: Compare the latest Bold IQM records for Siemens 7T scanners to IQM records from your own Siemens 3T scanner:
+**Example 4**: Compare the latest Bold IQM records for Siemens 7T scanners, retrieved in **Example 4** above, to IQM records from your own Siemens 3T scanner:
 ```
   > qmviolin bold fetched/Siemens7T.tsv inputs/my_siemens_3T.tsv
 ```
