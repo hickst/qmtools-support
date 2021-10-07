@@ -10,7 +10,7 @@ The use of content-specific query parameters is a very powerful capability, pote
 
 For more information about the IQM, provenance, and metadata fields provided by the MRIQC database server, and queryable by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
 
-
+For more information on the use of query parameters files in Fetcher, please see the [Queries documentation](https://github.com/hickst/qmtools-support/blob/main/docs/Queries.md).
 ## Using the Fetcher Tool
 
 ### **Prerequisite**: Install the QMTools Support project
