@@ -2,7 +2,7 @@
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
-**Authors**: [Tom Hicks](https://github.com/hickst) and [Dianne Patterson](https://github.com/dkp)
+**Author**: [Tom Hicks](https://github.com/hickst)
 
 **About**: This document describes the TrafficLight tool of the [QMTools project](https://github.com/hickst/qmtools). TrafficLight normalizes a set of MRIQC image quality metrics and creates a tabular HTML report, visualizing how much each image's metrics deviate from the mean for all the images in that set.
 

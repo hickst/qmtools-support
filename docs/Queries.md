@@ -1,6 +1,6 @@
 ﻿# QMTools Query Parameters Files
 
-**Authors**: [Tom Hicks](https://github.com/hickst) and [Dianne Patterson](https://github.com/dkp)
+**Author**: [Tom Hicks](https://github.com/hickst)
 
 **About**: This document describes the *query parameters* files used by the [Fetcher](https://github.com/hickst/qmtools-support/blob/main/docs/Fetcher.md) tool of the [QMTools project](https://github.com/hickst/qmtools). Fetcher queries the MRIQC database server to fetch image quality metrics (IQMs) for images previously processed by neuroimaging groups all over the world. To make a content-specific query, Fetcher reads query parameters from a query parameters file, located within the `queries` subdirectory. Criteria within the query parameters file may specify multiple provenance and image metadata parameters to filter the IQMs to be returned. Because Fetcher reads query parameters from user-created query parameters files, queries may be easily and consistently repeated.
 
@@ -57,7 +57,7 @@ The valid comparison operators in a criterion are:
 
 ### Criterion Values
 
-The third field of a criterion is the value (of the keyword-named field) to be queried for in the IQM records. As the database schema shows, these values are almost always strings, integers, or floats. For integers and floats, simple enter the value. **For strings, you must enclose the value within double quotes. Spaces and letter case in a quoted string are significant!** Remember to separate all values (quoted or not) from the operator by at least one space (outside any double quotes).
+The third field of a criterion is the value (of the keyword-named field) to be queried for in the IQM records. As the database schema shows, these values are almost always strings, integers, or floats. For integers and floats, simply enter the value. **For strings, you must enclose the value within double quotes. Spaces and letter case in a quoted string are significant!** Remember to separate all values (quoted or not) from the operator by at least one space (outside any double quotes).
 
 ### Note on Contradictory Queries
 

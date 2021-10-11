@@ -2,7 +2,7 @@
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
-**Authors**: [Tom Hicks](https://github.com/hickst) and [Dianne Patterson](https://github.com/dkp)
+**Author**: [Tom Hicks](https://github.com/hickst)
 
 **About**: This document describes the Fetcher tool of the [QMTools project](https://github.com/hickst/qmtools). Fetcher queries the MRIQC database server to fetch image quality metrics (IQMs) for images previously processed by neuroimaging groups all over the world. A query may specify multiple image metadata parameters to select the IQMs to be returned. As query parameters are read from user-created files, queries may be easily and consistently repeated.
 

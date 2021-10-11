@@ -2,7 +2,7 @@
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
-**Authors**: [Tom Hicks](https://github.com/hickst) and [Dianne Patterson](https://github.com/dkp)
+**Author**: [Tom Hicks](https://github.com/hickst)
 
 **About**: This document describes the Violin tool of the [QMTools project](https://github.com/hickst/qmtools). Violin compares two sets of MRIQC image quality metrics and creates an HTML report, using Violin plots to visualize how the two groups compare for each IQM. The two datasets to be compared can both be user-generated OR both fetched from the MRIQC database OR one of each.
 
