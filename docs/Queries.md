@@ -39,9 +39,9 @@ The criterion keyword must be the name of an IQM metric field, or a provenance f
 
 To know what metadata fields are usable within a criterion, you should consult the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page. Click the right arrows, next to the modality you are interested in, to view the schema used by the database. Notice that `bids_meta`, `provenance`, and `provenance.settings` will need further expansion (using the right arrows) to view the nested schema fields. (Note: please ignore the `rating` fields: Fetcher is not able to query on them).
 
-As you can see in the online schema, all BIDS metadata and provenance fields are *nested* within one or more parent fields. When querying for these nested fields, **you must include the parent field names as prefixes, conjoined with a period**. For example, BIDS metadata fields are nested within a parent field called `bids_meta`. To specify a repetition time criterion, the keyword must be specified as `bids_meta.RepetitionTime`. Similarly, provenance fields are also nested (some of them two deep!) so you must also use a prefix path to specify them. For example: `provenance.md5sum` or `provenance.settings.fd_thres`.
+As you can see in the online schema, all BIDS metadata and provenance fields are *nested* within one or more parent fields (while IQM fields are not). When querying for these nested fields, **you must include the parent field names as prefixes, conjoined with a period**. For example, BIDS metadata fields are nested within a parent field called `bids_meta`. To specify a repetition time criterion, the keyword must be specified as `bids_meta.RepetitionTime`. Similarly, provenance fields are also nested (some of them two deep!) so you must also use a prefix path to specify them. For example: `provenance.md5sum` or `provenance.settings.fd_thres`
 
- ***Remember:** You must include `bids_meta.` as a prefix when querying for a BIDS metadata field and use the same case for the field name as is given in the schema.*
+ ***Remember:** You must include `bids_meta.` as a prefix when querying for a BIDS metadata field and use the same case for the field name (keyword) as is given in the schema.*
 
 ### Criterion Operators
 
@@ -57,7 +57,7 @@ The valid comparison operators in a criterion are:
 
 ### Criterion Values
 
-The third field of a criterion is the value (of the keyword-named field) to be queried for in the IMQ records. As the database schema shows, these values are almost always strings, integers, or floats. For integers and floats, simple enter the value. **For strings, you must enclose the value within double quotes. Spaces and letter case in a quoted string are significant!** Remember to separate all values (quoted or not) from the operator by at least one space.
+The third field of a criterion is the value (of the keyword-named field) to be queried for in the IQM records. As the database schema shows, these values are almost always strings, integers, or floats. For integers and floats, simple enter the value. **For strings, you must enclose the value within double quotes. Spaces and letter case in a quoted string are significant!** Remember to separate all values (quoted or not) from the operator by at least one space (outside any double quotes).
 
 ### Note on Contradictory Queries
 
