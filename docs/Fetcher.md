@@ -8,7 +8,7 @@ This is a public code repository of the [Translational BioImaging Resource–MRI
 
 The use of content-specific query parameters is a very powerful capability, potentially allowing insight into many of the factors which affect image quality. Using QMTools, in conjunction with the MRIQC server, allows image quality metrics to be queried and compared across a variety of BIDS metadata and provenance properties.
 
-For more information about the IQM, provenance, and metadata fields provided by the MRIQC database server, and queryable by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
+For a listing of the IQM, provenance, and BIDS metadata fields provided by the MRIQC database server, and queryable by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
 
 For more information on the use of query parameters files in Fetcher, please see the [Queries documentation](https://github.com/hickst/qmtools-support/blob/main/docs/Queries.md).
 ## Using the Fetcher Tool
@@ -129,7 +129,7 @@ All datasets retrieved by the **qmfetcher** program will be placed in the `fetch
 
  A fetched dataset is a standard tab-separated file (`.tsv`) containing the quality metrics for one image in each row. However, in addition to the image quality metrics fields found in MRIQC-generated group files, the fetched datasets also contain many additional metadata columns. These additional columns include provenance information and BIDS metadata.
 
-**Note**: For more information about the IQM, provenance, and metadata fields provided by the MRIQC database server, and fetched by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
+**Note**: For a listing of the IQM, provenance, and BIDS metadata fields provided by the MRIQC database server, and fetched by the **qmfetcher** program, see the `Models` section of the [MRQCI Web API](https://mriqc.nimh.nih.gov/) page.
 
 **Example 1**: Open the dataset retrieved in **Example 1** above in your default spreadsheet program:
 ```
