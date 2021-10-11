@@ -77,7 +77,7 @@ Using the `--url-only` flag causes **qmfetcher** to construct and display the qu
 
 **Example 4**: Query for a dataset of recent Bold IQM records from Siemens 7T scanners:
 ```
-  > qmfetcher -v bold -o Siemens7T.tsv -q queries/samples/siemens7.qp
+  > qmfetcher -v bold -o Siemens7T.tsv -q queries/samples/siemens7T.qp
 
 (qmfetcher): Querying MRIQC server with modality 'bold', for 50 records.
 (qmfetcher): Fetched 50 records out of 278.
@@ -88,7 +88,7 @@ This example uses a *query parameters* file containing content-specific query pa
 
 **Example 5**: Just show the query to fetch a dataset of recent Bold IQM records from Siemens 7T scanners:
 ```
-  > qmfetcher -v bold -o Siemens7T.tsv -q queries/samples/siemens7.qp --url-only
+  > qmfetcher -v bold -o Siemens7T.tsv -q queries/samples/siemens7T.qp --url-only
 
 https://mriqc.nimh.nih.gov/api/v1/bold?max_results=50&page=1&sort=-_created&where=bids_meta.Manufacturer=="Siemens"%20and%20bids_meta.MagneticFieldStrength>=6.5
 ```
