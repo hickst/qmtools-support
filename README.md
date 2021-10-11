@@ -41,7 +41,9 @@ The `queries` directory will be used to hold _query parameters_ files: small fil
 
 ### 2. Run a QMTool through a Script
 
-In general, you will utilize the QMTools by copying MRIQC group files (IQM data files) into the `inputs` directory and/or by fetching IQM data from the MRIQC database server into the `fetched` directory. For each tool, a Bash script is included which makes the required directories available to the container and then starts the container to run the tool. Reports produced by the QMTools will be output to the `reports` directory or a sub-directory of the `reports` directory.
+***Note**: The QMTools scripts should always be run from the project directory.*
+
+In general, you will utilize the QMTools by copying MRIQC group files (IQM data files) into the `inputs` directory and/or by fetching IQM data from the MRIQC database server into the `fetched` directory. For each tool, a Bash script is included which makes the required directories available to the container and then starts the container to run the tool. Reports produced by the QMTools will be output to a sub-directory of the `reports` directory.
 
 [TrafficLight](https://github.com/hickst/qmtools-support/blob/main/docs/TrafficLight.md) - Normalizes a set of MRIQC image quality metrics and creates a tabular HTML report visualizing how much each image's metrics deviate from the mean for all the images.
 
