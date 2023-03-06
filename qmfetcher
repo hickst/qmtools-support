@@ -18,9 +18,9 @@ then
   echo '    -n NUM_RECS, --num-recs NUM_RECS'
   echo '                   Number of records to fetch (maximum) from a query.'
   echo '    -o filename, --output-filename filename'
-  echo '                   Optional name of file to hold query results in fetched directory.'
+  echo '                   Optional name of file to hold query results in the fetched directory.'
   echo '    -q filepath, --query-file filepath'
-  echo '                   Path to a query parameters file in or below the run directory.'
+  echo '                   Path to a query parameters file in or below the current directory.'
   echo '    --use-oldest   Fetch oldest records.'
   echo '    --url-only     Generate the query URL and exit program.'
   echo ''
@@ -32,4 +32,4 @@ then
   exit 1
 fi
 
-docker run -it --rm --name qmfetcher  -v "${PWD}"/inputs:/qmtools/inputs:ro  -v "${PWD}"/fetched:/qmtools/fetched -v "${PWD}"/queries:/qmtools/queries --entrypoint qmfetcher ${IMG} $@
+docker run -it --rm --name qmfetcher  -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/fetched:/fetched -v "${PWD}"/queries:/queries --entrypoint qmfetcher ${IMG} $@

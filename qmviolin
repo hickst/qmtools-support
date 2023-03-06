@@ -8,7 +8,7 @@ IMG=hickst/qmtools
 
 if [ $# -lt 3  -o "$1" = "-h" -o "$1" = "--help" ]
 then
-  echo 'Usage: qmviolin [-h] [-v] [-r REPORT_DIR] modality fetched_file group_file'
+  echo 'Usage: qmviolin [-h] [-r REPORT_DIR] modality fetched_file group_file'
   echo '  where:'
   echo '    modality       Modality of the MRIQC group file. Must be one of: bold, T1w, or T2w.'
   echo '    fetched_file   Path to the file, in "fetched" directory, to be compared to the group file.'
@@ -16,13 +16,12 @@ then
   echo ''
   echo '  options:'
   echo '    -h, --help     Show this help message and exit.'
-  echo '    -v, --verbose  Print informational messages during processing.'
   echo '    -r REPORT_DIR, --report-dir REPORT_DIR
                            Optional name of report subdirectory in main reports directory.'
   echo ''
-  echo '  example 1: qmviolin -v bold fetched/fetched.tsv inputs/sample_bold.tsv'
-  echo '  example 2: qmviolin -v bold fetched/fetched.tsv inputs/sample_bold.tsv -r sample_reports'
+  echo '  example 1: qmviolin bold fetched/fetched.tsv inputs/sample_bold.tsv'
+  echo '  example 2: qmviolin bold fetched/fetched.tsv inputs/sample_bold.tsv -r sample_reports'
   exit 1
 fi
 
-docker run -it --rm --name qmviolin  -v "${PWD}"/inputs:/qmtools/inputs:ro  -v "${PWD}"/fetched:/qmtools/fetched -v "${PWD}"/reports:/qmtools/reports --entrypoint qmviolin ${IMG} $@
+docker run -it --rm --name qmviolin -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/fetched:/fetched -v "${PWD}"/reports:/reports --entrypoint qmviolin ${IMG} -v $@

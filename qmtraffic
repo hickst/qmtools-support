@@ -8,20 +8,19 @@ IMG=hickst/qmtools
 
 if [ $# -lt 2  -o "$1" = "-h" -o "$1" = "--help" ]
 then
-  echo 'Usage: qmtraffic [-h] [-v] [-r REPORT_DIR] modality group_file'
+  echo 'Usage: qmtraffic [-h] [-r REPORT_DIR] modality group_file'
   echo '  where:'
   echo '     modality   = Modality of the MRIQC group file. Must be one of: bold, T1w, or T2w.'
   echo '     group_file = Path to MRIQC group file in "inputs" subdirectory.'
   echo ''
   echo '  options:'
   echo '    -h, --help     Show this help message and exit.'
-  echo '    -v, --verbose  Print informational messages during processing.'
   echo '    -r REPORT_DIR, --report-dir REPORT_DIR
                            Optional name of report subdirectory in main reports directory.'
   echo ''
-  echo '  example 1: qmtraffic -v bold inputs/sample_bold.tsv'
-  echo '  example 2: qmtraffic -v bold inputs/sample_bold.tsv -r sample_traffic_report'
+  echo '  example 1: qmtraffic bold inputs/sample_bold.tsv'
+  echo '  example 2: qmtraffic bold inputs/sample_bold.tsv -r sample_traffic_report'
   exit 1
 fi
 
-docker run -it --rm --name qmtraffic  -v "${PWD}"/inputs:/qmtools/inputs:ro  -v "${PWD}"/reports:/qmtools/reports --entrypoint qmtraffic ${IMG} $@
+docker run -it --rm --name qmtraffic  -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/reports:/reports --entrypoint qmtraffic ${IMG} -v $@
