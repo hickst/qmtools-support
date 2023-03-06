@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Shell script to run the QMFetcher program from inside the QMTools Docker container.
+# This script mounts the required directories and call the tool inside the container.
+#
+# echo "ARGS=$*"
+
+PROG=$0
+
+export SIF=/opt/apptainer/neuroimaging
+
+if [ $# -lt 1  -o "$1" = "-h" -o "$1" = "--help" ]
+then
+  echo "usage: $PROG [-h] [-v] [-n NUM_RECS] [-o filename] [-q filepath] [--use-oldest] [--url-only] modality"
+  echo '  where:'
+  echo '    modality       Modality of the MRIQC group file. Must be one of: bold, T1w, or T2w.'
+  echo ''
+  echo '  options:'
+  echo '    -h, --help     Show this help message and exit.'
+  echo '    -v, --verbose  Print informational messages during processing.'
+  echo '    -n NUM_RECS, --num-recs NUM_RECS'
+  echo '                   Number of records to fetch (maximum) from a query.'
+  echo '    -o filename, --output-filename filename'
+  echo '                   Optional name of file to hold query results in the fetched directory.'
+  echo '    -q filepath, --query-file filepath'
+  echo '                   Path to a query parameters file in or below the current directory.'
+  echo '    --use-oldest   Fetch oldest records.'
+  echo '    --url-only     Generate the query URL and exit program.'
+  echo ''
+  echo "  example 1: $PROG -v bold"
+  echo "  example 2: $PROG -v T1w -n 27 --use-oldest -o T1w_oldies"
+  echo "  example 3: $PROG -v T1w -n 27 --use-oldest --url-only"
+  echo "  example 4: $PROG -v bold -o Siemens7T.tsv -q queries/samples/siemens7T.qp"
+  echo "  example 5: $PROG -v bold -o Siemens7T.tsv -q queries/samples/siemens7T.qp --url-only"
+  exit 1
+fi
+
+apptainer exec --pwd / --bind ${PWD}/fetched:/fetched --bind ${PWD}/queries:/queries ${SIF}/qmtools_latest.sif qmfetcher $@
