@@ -4,11 +4,13 @@
 # This script mounts the required directories and call the tool inside the container.
 #
 # echo "ARGS=$*"
+
 IMG=hickst/qmtools
+PROG=$0
 
 if [ $# -lt 3  -o "$1" = "-h" -o "$1" = "--help" ]
 then
-  echo 'Usage: qmviolin [-h] [-r REPORT_DIR] modality fetched_file group_file'
+  echo "Usage: $PROG [-h] [-r REPORT_DIR] modality fetched_file group_file"
   echo '  where:'
   echo '    modality       Modality of the MRIQC group file. Must be one of: bold, T1w, or T2w.'
   echo '    fetched_file   Path to the file, in "fetched" directory, to be compared to the group file.'
@@ -19,8 +21,8 @@ then
   echo '    -r REPORT_DIR, --report-dir REPORT_DIR
                            Optional name of report subdirectory in main reports directory.'
   echo ''
-  echo '  example 1: qmviolin bold fetched/fetched.tsv inputs/sample_bold.tsv'
-  echo '  example 2: qmviolin bold fetched/fetched.tsv inputs/sample_bold.tsv -r sample_reports'
+  echo "  example 1: $PROG bold fetched/fetched.tsv inputs/sample_bold.tsv"
+  echo "  example 2: $PROG bold fetched/fetched.tsv inputs/sample_bold.tsv -r sample_reports"
   exit 1
 fi
 

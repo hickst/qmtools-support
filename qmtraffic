@@ -4,11 +4,13 @@
 # This script mounts the required directories and call the tool inside the container.
 #
 # echo "ARGS=$*"
+
 IMG=hickst/qmtools
+PROG=$0
 
 if [ $# -lt 2  -o "$1" = "-h" -o "$1" = "--help" ]
 then
-  echo 'Usage: qmtraffic [-h] [-r REPORT_DIR] modality group_file'
+  echo "Usage: $PROG [-h] [-r REPORT_DIR] modality group_file"
   echo '  where:'
   echo '     modality   = Modality of the MRIQC group file. Must be one of: bold, T1w, or T2w.'
   echo '     group_file = Path to MRIQC group file in "inputs" subdirectory.'
@@ -18,8 +20,8 @@ then
   echo '    -r REPORT_DIR, --report-dir REPORT_DIR
                            Optional name of report subdirectory in main reports directory.'
   echo ''
-  echo '  example 1: qmtraffic bold inputs/sample_bold.tsv'
-  echo '  example 2: qmtraffic bold inputs/sample_bold.tsv -r sample_traffic_report'
+  echo "  example 1: $PROG bold inputs/sample_bold.tsv"
+  echo "  example 2: $PROG bold inputs/sample_bold.tsv -r sample_traffic_report"
   exit 1
 fi
 
