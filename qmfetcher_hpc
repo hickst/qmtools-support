@@ -7,7 +7,7 @@
 
 PROG=$0
 
-export SIF=/opt/apptainer/neuroimaging
+export SIF=${SIF:-/contrib/singularity/shared/neuroimaging}
 
 if [ $# -lt 1  -o "$1" = "-h" -o "$1" = "--help" ]
 then
