@@ -27,5 +27,4 @@ then
   exit 1
 fi
 
-# apptainer exec --pwd / --bind ${PWD}/inputs:/inputs:ro --bind ${PWD}/fetched:/fetched --bind ${PWD}/reports:/reports ${SIF}/qmtools_test.sif qmviolin -v $@
-apptainer exec --pwd / --bind ${PWD}/inputs:/inputs:ro --bind ${PWD}/fetched:/fetched --bind ${PWD}/reports:/reports ${SIF}/qmtools_test.sif qmviolin -v $@
+apptainer exec --pwd / --bind ${PWD}/inputs:/inputs:ro --bind ${PWD}/fetched:/fetched --bind ${PWD}/reports:/reports ${SIF}/qmtools_latest.sif qmviolin -v $@
