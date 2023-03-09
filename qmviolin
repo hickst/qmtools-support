@@ -21,8 +21,8 @@ then
   echo '    -r REPORT_DIR, --report-dir REPORT_DIR
                            Optional name of report subdirectory in main reports directory.'
   echo ''
-  echo "  example 1: $PROG bold fetched/fetched.tsv inputs/sample_bold.tsv"
-  echo "  example 2: $PROG bold fetched/fetched.tsv inputs/sample_bold.tsv -r sample_reports"
+  echo "  example 1: $PROG bold fetched/sample_fetched.tsv inputs/sample_bold.tsv"
+  echo "  example 2: $PROG bold fetched/sample_fetched.tsv inputs/sample_bold.tsv -r sample_reports"
   exit 1
 fi
 
