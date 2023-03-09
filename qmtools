@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Shell script to test the top-level landing (help) script from inside the QMTools Docker container.
+# This script mounts the required directories and call the  inside the container.
+#
+# echo "ARGS=$*"
+
+PROG=$0
+
+IMG=hickst/qmtools
+
+docker run -it --rm --name qmtools -u $UID --entrypoint qmtools ${IMG} -v $@
