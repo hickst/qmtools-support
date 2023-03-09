@@ -1,4 +1,6 @@
-# environment variables
+# SIF should already be set, in the environment, to your local repository. For example:
+#   export SIF=/contrib/singularity/shared/neuroimaging
+#
 TOPLVL=${PWD}
 FETCHED=${TOPLVL}/fetched
 INPUTS=${TOPLVL}/inputs
@@ -14,9 +16,6 @@ IMG=hickst/qmtools
 IMGSIF=qmtools_latest.sif
 PROG=QMTools
 SHELL=/bin/bash
-# SIF should already be set, in the environment, to your local repository. For example:
-#   export SIF=/contrib/singularity/shared/neuroimaging
-
 
 .PHONY: help bash bash_hpc cleanfetch cleanrpts
 
