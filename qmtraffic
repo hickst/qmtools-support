@@ -25,4 +25,4 @@ then
   exit 1
 fi
 
-docker run -it --rm --name qmtraffic  -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/reports:/reports --entrypoint qmtraffic ${IMG} -v $@
+docker run -it --rm --name qmtraffic -u $UID -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/reports:/reports --entrypoint qmtraffic ${IMG} -v $@

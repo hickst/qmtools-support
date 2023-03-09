@@ -26,4 +26,4 @@ then
   exit 1
 fi
 
-docker run -it --rm --name qmviolin -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/fetched:/fetched -v "${PWD}"/reports:/reports --entrypoint qmviolin ${IMG} -v $@
+docker run -it --rm --name qmviolin -u $UID -v "${PWD}"/inputs:/inputs:ro  -v "${PWD}"/fetched:/fetched -v "${PWD}"/reports:/reports --entrypoint qmviolin ${IMG} -v $@

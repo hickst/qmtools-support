@@ -34,4 +34,4 @@ then
   exit 1
 fi
 
-docker run -it --rm --name qmfetcher -v "${PWD}"/fetched:/fetched -v "${PWD}"/queries:/queries --entrypoint qmfetcher ${IMG} $@
+docker run -it --rm --name qmfetcher -u $UID -v "${PWD}"/fetched:/fetched -v "${PWD}"/queries:/queries --entrypoint qmfetcher ${IMG} $@
