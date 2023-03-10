@@ -1,4 +1,4 @@
-﻿# QMTools Fetcher
+# QMTools Fetcher
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
@@ -17,25 +17,28 @@ For more information on the use of query parameters files in Fetcher, please see
 
 Follow the instructions on this project's [main page](https://github.com/hickst/qmtools-support) to install the project which the Fetcher script (**qmfetcher**) and this document are a part of.
 
-### **Prerequisite**: Docker
+### **Prerequisite**: Docker or Apptainer
 
-You must have Docker installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
+You must have Docker or Apptainer installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
 
 ### **Step 1**: Ensure the required input files are available
 
 The Fetcher program retrieves a dataset of IQM records from an online database and, thus, does not require any data files as inputs. 
 
-The Fetcher program does, however, allow complex queries using multiple metadata parameters, which are stored in *query parameters* files. These "canned" queries **must** be located within the `queries` subdirectory, as that directory is made available to the QMTools Docker container by the **qmfetcher** script. When you create your own query parameters files, please make sure that they reside somewhere within the `queries` directory tree.
+The Fetcher program does, however, allow complex queries using multiple metadata parameters, which are stored in *query parameters* files. These "canned" queries **must** be located within the `queries` subdirectory, as that directory is made available to the QMTools container called by the **qmfetcher** script. When you create your own query parameters files, please make sure that they reside somewhere within the `queries` directory tree.
 
 ### **Step 2**: Run the **qmfetcher** Script
 
-Each tool includes an associated script which runs the tool within the QMTools Docker container and makes the appropriate subdirectories available to the container (via a Docker *bind mount*):
+Each tool includes an associated script which runs the tool within the QMTools container and makes the appropriate subdirectories available to the container (via a Docker or Apptainer *bind mount*):
 
 To retrieve a dataset from the MRIQC server, run the **qmfetcher** script at the command line, specifying the modality and optional arguments to control the query. Optional arguments allow naming the output file, specifying the number of records to fetch, selecting the oldest records, and using a *query parameters* file; which contains content-specific query parameters.
+
+The examples are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended.
 
 For a listing of the **qmfetcher** arguments, see the [Getting Usage Help](#Getting-Usage-Help) section below.
 
 **Example 1**: Retrieve a dataset of the most recent 50 Bold IQM records:
+
 ```
   > qmfetcher -v bold
 ```

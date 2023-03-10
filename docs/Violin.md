@@ -1,4 +1,4 @@
-﻿# QMTools Violin
+# QMTools Violin
 
 This is a public code repository of the [Translational BioImaging Resource–MRI](https://research.arizona.edu/facilities/core-facilities/translational-bioimaging-resource-mri) core group at the [University of Arizona](https://www.arizona.edu/).
 
@@ -12,9 +12,9 @@ This is a public code repository of the [Translational BioImaging Resource–MRI
 
 Follow the instructions on this project's [main page](https://github.com/hickst/qmtools-support) to install the project which the Violin script (**qmviolin**) and this document are a part of.
 
-### **Prerequisite**: Docker
+### **Prerequisite**: Docker or Apptainer
 
-You must have Docker installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
+You must have Docker or Apptainer installed and working on your machine to use this project. For instructions on how to install Docker see [this link](https://docs.docker.com/get-docker/).
 
 ### **Step 1**: Ensure the required input files are available
 
@@ -28,9 +28,11 @@ Two MRIQC group files can also be compared directly. This might be useful for co
 
 ### **Step 2**: Run the **qmviolin** Script
 
-Each tool includes an associated script which runs the tool within the QMTools Docker container and makes the appropriate subdirectories available to the container (via a Docker *bind mount*):
+Each tool includes an associated script which runs the tool within the QMTools container and makes the appropriate subdirectories available to the container (via a Docker or Apptainer *bind mount*):
 
 To produce a Violin report, run the **qmviolin** script at the command line, specifying the modality and the relative paths to the two MRIQC dataset files. Optionally, you may also specify the name of an output subdirectory, within the main `reports` directory, where the report files will be saved.
+
+The examples are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended.
 
 **Note**: from the **qmviolin** program's perspective it is always comparing a reference dataset (the `fetched` dataset) against a user generated dataset (the `group` dataset). But, as previously noted, the two datasets may also be both fetched or both generated. The first dataset specified will always be taken as the reference (`fetched`) dataset.
 
