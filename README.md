@@ -58,6 +58,9 @@ In general, you will utilize the QMTools by copying MRIQC group files (IQM data 
 [Violin](https://github.com/hickst/qmtools-support/blob/main/docs/Violin.md) - Compares two sets of MRIQC image quality metrics and creates an HTML report, with Violin plots, visualizing how the two groups compare for each IQM. The two data sets to be compared can both be user-generated OR both fetched from the MRIQC database OR one of each.
 
 **Please see the individual tools documentation for instructions on running each tool.**
+
+The examples for the individual tools are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended (e.g. use `qmfetcher` to call the Docker container, or, if you are working with apptainer, use `qmfetcher_hpc`).  If you are using Apptainer, define a `$SIF` environment variable indicating the directory where the apptainer container resides, or modify the script to indicate the directory containing `qmtools_latest.sif`.  This is already done for the U of A HPC.)
+
 ## Related Links
 
 The source code for the [QMTools](https://github.com/hickst/qmtools) in GitHub.
