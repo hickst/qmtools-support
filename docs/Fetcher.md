@@ -33,12 +33,11 @@ Each tool includes an associated script which runs the tool within the QMTools c
 
 To retrieve a dataset from the MRIQC server, run the **qmfetcher** script at the command line, specifying the modality and optional arguments to control the query. Optional arguments allow naming the output file, specifying the number of records to fetch, selecting the oldest records, and using a *query parameters* file; which contains content-specific query parameters.
 
-The examples are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended.
+The examples are all for Docker. If you are using Apptainer instead, then use the corresponding Apptainer scripts (the ones with the `*_hpc` suffix).
 
 For a listing of the **qmfetcher** arguments, see the [Getting Usage Help](#Getting-Usage-Help) section below.
 
 **Example 1**: Retrieve a dataset of the most recent 50 Bold IQM records:
-
 ```
   > qmfetcher -v bold
 ```

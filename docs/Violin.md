@@ -32,7 +32,7 @@ Each tool includes an associated script which runs the tool within the QMTools c
 
 To produce a Violin report, run the **qmviolin** script at the command line, specifying the modality and the relative paths to the two MRIQC dataset files. Optionally, you may also specify the name of an output subdirectory, within the main `reports` directory, where the report files will be saved.
 
-The examples are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended.
+The examples are all for Docker. If you are using Apptainer instead, then use the corresponding Apptainer scripts (the ones with the `*_hpc` suffix).
 
 **Note**: from the **qmviolin** program's perspective it is always comparing a reference dataset (the `fetched` dataset) against a user generated dataset (the `group` dataset). But, as previously noted, the two datasets may also be both fetched or both generated. The first dataset specified will always be taken as the reference (`fetched`) dataset.
 

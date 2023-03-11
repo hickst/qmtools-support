@@ -31,7 +31,7 @@ Each tool includes an associated script which runs the tool within the QMTools c
 
 To produce a TrafficLight report, run the **qmtraffic** script at the command line, specifying the modality and the relative path to the MRIQC group file.
 
-The examples are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended.
+The examples are all for Docker. If you are using Apptainer instead, then use the corresponding Apptainer scripts (the ones with the `*_hpc` suffix).
 
 **Example 1**: Run the TrafficLight report for the previously copied MRIQC group file:
 ```

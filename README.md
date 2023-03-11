@@ -4,17 +4,22 @@ This is a public code repository of the [Translational BioImaging Resource–MRI
 
 **Authors**: [Tom Hicks](https://github.com/hickst) and [Dianne Patterson](https://github.com/dkp)
 
-**About**: This project provides scripts, sample files, and documentation to use the [QMTools project](https://github.com/hickst/qmtools).  QMTools is implemented as a [Docker container](https://hub.docker.com/repository/docker/hickst/qmtools) and the comparable apptainer container can be built from Docker: 
+**About**: This project provides scripts, sample files, and documentation to use the
+ [QMTools project](https://github.com/hickst/qmtools).  QMTools is implemented as a
+ [Docker container](https://hub.docker.com/repository/docker/hickst/qmtools). The container
+ implements several programs to visualize, compare, and review the image quality metrics
+ (IQMs) produced by the [MRIQC program](https://github.com/poldracklab/mriqc). MRIQC
+ extracts no-reference IQMs from structural (T1w and T2w) and functional (BOLD) MRI data.
+
+ A corresponding Apptainer container can be built from the Docker image:
 
 ```bash
 apptainer build qmtools_latest.sif docker://hickst/qmtools
 ```
 
-The container implements several programs to visualize, compare, and review the image quality metrics (IQMs) produced by the [MRIQC program](https://github.com/poldracklab/mriqc). MRIQC extracts no-reference IQMs from structural (T1w and T2w) and functional (BOLD) MRI data.
-
 ## Using QMTools Support
 
-This QMTools Support repository is designed to use the publicly available [QMTools Docker container](https://hub.docker.com/repository/docker/hickst/qmtools), or the comparable apptainer container. Scripts, sample files, and documentation are provided to simplify this process. With this approach, the QMTools located in the container are called by the scripts to process data from input and output directories which the scripts make available to the container. Since this approach requires only **Docker** or **Apptainer**, and the **bash shell** to be installed on the computer, it has a minimal "footprint". 
+This QMTools Support repository is designed to use the publicly available [QMTools Docker container](https://hub.docker.com/repository/docker/hickst/qmtools) or a derived Apptainer container. Scripts, sample files, and documentation are provided to simplify this process. With this approach, the QMTools located in the container are called by the support scripts to process data from input and output directories which the scripts make available to the container. Since this approach requires only **Docker** or **Apptainer**, and the **bash shell** to be installed on the computer, it has a minimal "footprint".
 
 To use the QMTools Support project:
 
@@ -59,7 +64,7 @@ In general, you will utilize the QMTools by copying MRIQC group files (IQM data 
 
 **Please see the individual tools documentation for instructions on running each tool.**
 
-The examples for the individual tools are all for Docker.  If you are using Apptainer instead, then the scripts have `*_hpc` appended (e.g. use `qmfetcher` to call the Docker container, or, if you are working with apptainer, use `qmfetcher_hpc`).  If you are using Apptainer, define a `$SIF` environment variable indicating the directory where the apptainer container resides, or modify the script to indicate the directory containing `qmtools_latest.sif`.  This is already done for the U of A HPC.)
+The examples in the individual tools documenation are all for Docker. If you are using Apptainer instead, then the corresponding support scripts have `*_hpc` appended (e.g. use `qmfetcher` to run the Docker container and use `qmfetcher_hpc` to run the Apptainer container). If you are using Apptainer you should define a `SIF` environment variable indicating the directory where the Apptainer image `qmtools_latest.sif` resides. (The `SIF` environment variable in the script is set, by default, to the correct location for the U of Arizona HPC center).
 
 ## Related Links
 
